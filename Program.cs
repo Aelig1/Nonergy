@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Forms;
 
 namespace Nonergy
 {
@@ -6,7 +7,18 @@ namespace Nonergy
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Nonergy!");
+
+            LogKeys keyListener = new LogKeys();
+            keyListener.Start();
+
+            Console.WriteLine("Listening...");
+
+            SendKeys keySender = new SendKeys();
+
+            Application.Run(new ApplicationContext());
+
+            keyListener.Stop();
         }
     }
 }
