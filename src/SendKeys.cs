@@ -45,12 +45,12 @@ namespace Nonergy
         [DllImport("user32.dll")]
         static extern int SetCursorPos(int x, int y);
 
-        void KeyDown(KeyEventArgs e)
+        public void KeyDown(KeyEventArgs e)
         {
             keybd_event((byte)e.KeyCode, 0, KEYEVENTF_EXTENDEDKEY, 0);
         }
 
-        void KeyUp(KeyEventArgs e)
+        public void KeyUp(KeyEventArgs e)
         {
             keybd_event((byte)e.KeyCode, 0, KEYEVENTF_KEYUP, 0);
         }
